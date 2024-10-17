@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/beige"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="6dp"
+    tools:context=".fragment.HomeFragment">
+
+    <!-- Outros elementos do layout -->
+
+    <!-- Menu de Cabeçalhos do Produto -->
+    <LinearLayout
+        android:id="@+id/headerMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvHeaderProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/border_textview"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Produto"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHeaderQtd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/border_textview"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="qtd/peso"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHeaderValueUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@drawable/border_textview"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="und/kg"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHeaderTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:text="Total"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:padding="8dp"
+            android:textColor="@color/blue"
+            android:background="@drawable/border_textview"/>
+    </LinearLayout>
+
+    <!-- Botão Adicionar -->
+
+    <LinearLayout
+        android:id="@+id/nomeMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerMenu">
+
+
+        <Spinner
+            android:id="@+id/spinner_nomes"
+            android:layout_width="57dp"
+            android:layout_height="35dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/editTextQuantity"
+            android:layout_width="28dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:hint="Quant.\n ou Peso"
+            android:inputType="numberDecimal"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextUnitValue"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:hint="Valor\n Und ou Kg"
+            android:inputType="numberDecimal"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewTotalValue"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Total"
+            android:textColor="@android:color/holo_green_dark"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="98dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvQantidadeProdutos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeMenu">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListaProdutos"
+            android:layout_width="match_parent"
+            android:layout_height="532dp" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tvQantidadeProdutos"
+        android:layout_width="180dp"
+        android:layout_height="32dp"
+        android:gravity="left|center"
+        android:padding="6dp"
+        android:text="Qtd Produtos: 0"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="198dp"
+        android:layout_height="32dp"
+        android:gravity="right|center"
+        android:padding="4dp"
+        android:text="Valor Total: R$ 0,00"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvQantidadeProdutos"
+        app:layout_constraintTop_toTopOf="@+id/tvQantidadeProdutos" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_compartilhar"
+            android:layout_width="26dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="80dp"
+            android:src="@drawable/baseline_share_24" />
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="26dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:layout_marginEnd="90dp"
+            android:src="@drawable/add_shopping_cart_24px" />
+
+        <ImageView
+            android:id="@+id/img_delete"
+            android:layout_width="26dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginStart="80dp"
+            android:src="@drawable/delete_24dp" />
+
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

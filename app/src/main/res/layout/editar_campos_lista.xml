@@ -1,0 +1,58 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+
+
+    <TextView
+        android:id="@+id/tv_nome_produto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="nomeProdudo"
+        android:layout_weight="1"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+
+
+    <EditText
+        android:id="@+id/editTextQuantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:hint="Quant.\n ou Peso"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@android:drawable/editbox_background" />
+
+    <EditText
+        android:id="@+id/editTextUnitValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:hint="Valor\n Und ou Kg"
+        android:inputType="numberDecimal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@android:drawable/editbox_background" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="total"
+        android:textColor="@android:color/holo_green_dark"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+</LinearLayout>
